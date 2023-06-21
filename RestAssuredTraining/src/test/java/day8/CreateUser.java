@@ -1,0 +1,42 @@
+package day8;
+
+import org.json.JSONObject;
+import org.testng.ITestContext;
+import org.testng.annotations.Test;
+import static io.restassured.RestAssured.*;
+import static io.restassured.matcher.RestAssuredMatchers.*;
+import static org.hamcrest.Matchers.*;
+
+import com.github.javafaker.Faker;
+
+import io.restassured.response.Response;
+
+public class CreateUser {
+	
+	@Test
+	void test_createuser(ITestContext context)
+	{
+		Faker faker=new Faker();
+		JSONObject data=new JSONObject();
+		data.put("name",faker.name().fullName());
+		data.put("gender","male");
+		data.put("email", faker.internet().emailAddress());
+		data.put("status", "active");
+		
+		String bearerToken="d5d779128023f02e0ce72dc8ba259d7cbf43aa0248590ac7bd62618873e2b6dd";
+		int id=given()
+			.header("Authorization","Bearer "+bearerToken)
+			.contentType("application/json")
+			.body(data.toString())
+		.when()
+			.post("https://gorest.co.in/public/v2/users")
+			.jsonPath().getInt("id");
+		System.out.println("Generated id "+id);
+		//context.setAttribute("user_id", id);//This is available at test level
+		context.getSuite().setAttribute("user_id", id); //This is available at suite level
+		
+		
+		
+	}
+
+}

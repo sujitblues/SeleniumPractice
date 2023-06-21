@@ -1,0 +1,18 @@
+package StringConcept;
+
+public class StringMethod {
+
+	public static void main(String[] args) {
+		String s="This is my java code";
+		int len=s.length();
+		System.out.println(len);
+		System.out.println(s.charAt(0));
+		System.out.println(s.charAt(19));
+		//System.out.println(s.charAt(20));//SIOB
+		//System.out.println(s.charAt(-1));//SIOB
+		System.out.println(s.indexOf('T'));
+		System.out.println(s.indexOf('i'));//1st occurrence of i
+		System.out.println(s.indexOf('i', 3));
+	}
+
+}

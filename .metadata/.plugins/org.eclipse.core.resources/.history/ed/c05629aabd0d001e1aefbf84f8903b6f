@@ -1,0 +1,65 @@
+import org.testng.annotations.Test;
+import java.util.HashMap;
+import static io.restassured.RestAssured.*;
+import static io.restassured.matcher.RestAssuredMatchers.*;
+import static org.hamcrest.Matchers.*;
+public class HttpRequest {
+	
+	@Test
+	 void listUser()
+	{
+		given()
+		.when()
+		.get("https://reqres.in/api/users?page=2")
+		.then()
+		.statusCode(200).log().all();
+	
+		
+		
+	}
+	//hashmap
+	//pojo
+	//jsonObject
+	//external file
+@Test	
+public void createUser()
+
+{
+	HashMap<String,Object> payload=new HashMap<String,Object>();
+	payload.put("name", "Ramesh");
+	payload.put("job", "QA");
+	payload.put("mobile", 98765478);
+	
+	
+	given()
+	.contentType("application/json")
+	.body(payload)
+	.log().all()
+	.when()
+	.post("https://reqres.in/api/users")
+	.then()
+	.statusCode(201)
+	.log().all();
+	
+}
+@Test
+public void updateUser()
+{
+	HashMap<String,Object> payload=new HashMap<String,Object>();
+	payload.put("name", "Ramesh Reddy");
+	payload.put("job", "Test Lead");
+	payload.put("mobile", 98765478);
+	
+	
+	given()
+	.contentType("application/json")
+	.body(payload)
+	.log().all()
+	.when()
+	.put("https://reqres.in/api/users/134")
+	.then()
+	.statusCode(201)
+	.log().all();
+	
+}
+}

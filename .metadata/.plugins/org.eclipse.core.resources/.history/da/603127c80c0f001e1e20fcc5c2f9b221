@@ -1,0 +1,9 @@
+# hash is used for commenting in properties file
+browser=chrome
+
+headless=true
+incognito=true
+
+url="https://naveenautomationlabs.com/opencart/index.php?route=account/login"
+username="sujitautomation@gmail.com"
+password="Hello@123"

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;ExtentListenerClass.java&apos; to &apos;SDET-Final/src/test/java/com.jiomart.listeners&apos;&#x0D;&#x0A;- Original project: &apos;MyStoreV1&apos;&#x0D;&#x0A;- Destination element: &apos;SDET-Final/src/test/java/com.jiomart.listeners&apos;&#x0D;&#x0A;- Original element: &apos;com.mystore.utilities.ExtentListenerClass.java&apos;" description="Copy compilation unit" destination="=SDET-Final/src\/test\/java=/test=/true=/=/optional=/true=/=/maven.pomderived=/true=/&lt;com.jiomart.listeners" element1="/src\/test\/java=/optional=/true=/=/maven.pomderived=/true=/=/test=/true=/&lt;com.mystore.utilities{ExtentListenerClass.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1679335146014" units="1" version="1.0"/>
+</session>

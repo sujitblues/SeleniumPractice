@@ -1,0 +1,54 @@
+package com.qa.opencart.factory;
+import java.util.Properties;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+public class DriverFactory {
+	WebDriver driver;
+	
+	public WebDriver initDriver(Properties prop)
+	{
+		String browserName=prop.getProperty("browser").trim();
+		System.out.println("browser name is :"+browserName);
+		switch(browserName.toLowerCase())
+		{
+		case "chrome":
+			driver =new ChromeDriver();
+		case "edge":
+			driver =new ChromeDriver();
+		case "safari":
+			driver =new ChromeDriver();
+		case "firefox":
+			driver =new ChromeDriver();
+		default :
+			driver =new ChromeDriver();
+			System.out.println("please enter right browser");
+			break;
+		}
+		driver.manage().deleteAllCookies();
+		driver.manage().window().maximize();
+		driver.get(prop.getProperty("url"));
+		return driver;
+	}
+	public Properties initProp()
+	{
+		Properties prop=new Properties();
+		try {
+			FileInputStream ip=new FileInputStream("./src/main/resources/config/config.properties");
+			try {
+				prop.load(ip);
+			} catch (IOException e) {  
+				e.printStackTrace();
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		return prop;
+		
+	}
+
+}

@@ -1,0 +1,3 @@
+Feature:print hello world feature
+scenario: Hello World scenario
+	*print 'hello world'
