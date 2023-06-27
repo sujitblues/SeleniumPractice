@@ -1,0 +1,32 @@
+package day3;
+import static io.restassured.RestAssured.*;
+import static io.restassured.matcher.RestAssuredMatchers.*;
+import static org.hamcrest.Matchers.*;
+import org.testng.annotations.Test;
+import io.restassured.response.Response;
+import java.util.HashMap;
+public class cookiesDemo {
+	
+	@Test
+	public void testCookies()
+	{
+		given()
+		.when()
+		.get("https://www.google.co.in/")
+		.then()
+		.cookie("ACE","AUEFqZeEtKPjdvsTRBOb44FHdbSoFZxXTEf0SdFP7Ei_7mxn19q7LW63ETY")
+		.log().all();
+		
+	}
+	@Test
+	public void TestCaputreAllCookies()
+	{
+		Response res=given()
+		.when()
+		.get("https://www.google.co.in/");
+		String Cookies_Value=res.cookie("ACE");
+		System.out.println(Cookies_Value);
+		Map<String,String>cookiesValue=res.cookies();
+		
+	}
+}

@@ -1,0 +1,8 @@
+
+public class POJORequest {
+	String name;
+	String job;
+	String mobile;
+	String[] courses;
+
+}

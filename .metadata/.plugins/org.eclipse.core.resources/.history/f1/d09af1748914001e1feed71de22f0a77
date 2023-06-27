@@ -1,0 +1,17 @@
+package SeleniumSession;
+
+import java.time.Duration;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.WebDriver;
+
+public class ImplicitWaitConcept {
+
+	public static void main(String[] args) {
+		WebDriver driver=new ChromeDriver();
+		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);// sel 3.x
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));// sel 4.x
+		
+	}
+
+}

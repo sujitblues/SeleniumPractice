@@ -3,13 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="RequestResponseSpec.specBuilderTest">
+      <class name="day3.cookiesDemo">
         <methods>
-          <include name="deleteuser"/>
-          <include name="updateuser"/>
-          <include name="createUser"/>
+          <include name="testCookies"/>
         </methods>
-      </class> <!-- RequestResponseSpec.specBuilderTest -->
+      </class> <!-- day3.cookiesDemo -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

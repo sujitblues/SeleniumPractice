@@ -1,0 +1,29 @@
+package SeleniumSession;
+
+import java.time.Duration;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class ImplicitWaitConcept {
+
+	public static void main(String[] args) {
+		WebDriver driver=new ChromeDriver();
+		//driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);// sel 3.x
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));// sel 4.x
+		
+	//implicit wait:global wait
+		//applicable for all the web elements
+		//not applied to the specific element
+		//can not be used to non web elements:titile ,url,alerts
+		driver.get("https://www.amazon.in/");
+		driver.findElement(By.id("twotabsearchtextbox")).sendKeys("mackbook");
+		String label=driver.findElement(By.id("nav-logo-sprites")).getAttribute("aria-label");
+		System.out.println(label);
+		
+		
+	
+	}
+
+}

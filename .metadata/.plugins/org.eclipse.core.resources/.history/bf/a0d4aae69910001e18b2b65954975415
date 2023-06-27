@@ -1,0 +1,19 @@
+package SeleniumSession;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class BrowserHandleTogether {
+
+	public static void main(String[] args) {
+		WebDriver driver=new ChromeDriver();
+		driver.get("https://opensource-demo.orangehrmlive.com/");//parent page
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//a[contains(@href,'twitter)]")).click();
+		driver.findElement(By.xpath("//a[contains(@href,'linkedin)]")).click();
+		driver.findElement(By.xpath("//a[contains(@href,'facebook)]")).click();
+		driver.findElement(By.xpath("//a[contains(@href,'youtube)]")).click();
+
+	}
+
+}
